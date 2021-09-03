@@ -15,7 +15,8 @@
 
 .ExpirationDateContainer {
   border-radius: 20px;
-  background-color: yellow;
+  background-color: #d1b15d
+  ;
   width: 200px;
 }
 @media (max-width: 768px) {

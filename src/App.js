@@ -7,6 +7,7 @@ import Sales from './Sales/Sales';
 import Newsletter from './Newsletter/Newsletter';
 import getCharactersFromApi from './Services/getCharactersFromApi';
 import FilterList from "./Characters/FilterList";
+import Footer from "./Footer/Footer"
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -48,6 +49,7 @@ function App() {
           handleFilter={handleFilter}
         />
       </div>
+      <Footer/>
     </div>
   );
 }
