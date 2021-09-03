@@ -1,6 +1,9 @@
 
 .SalesWrapper {
-  height: 1000px;
-  margin-top:-28px;
-  background-color:aqua
+  background-color:#a6b898 ;
+}
+
+.SalesTitle {
+  margin:0;
+  padding:20px;
 }

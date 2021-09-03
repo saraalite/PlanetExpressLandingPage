@@ -11,7 +11,6 @@ import FilterList from "./Characters/FilterList";
 function App() {
   const [characters, setCharacters] = useState([]);
   const [filterByName, setFilterByName] = useState("");
-  const [filterBySpecies, setFilterBySpecies] = useState("All");
 
   useEffect(() => {
     Promise.all(getCharactersFromApi()).then(function(values) {
@@ -23,9 +22,7 @@ function App() {
   const handleFilter = (data) => {
     if (data.key === "name") {
       setFilterByName(data.value);
-    } else if (data.key === "species") {
-      setFilterBySpecies(data.value);
-    }
+    } 
   };
 
   const filteredList = characters
@@ -34,13 +31,7 @@ function App() {
         filterByName === "" ||
         character.Name.match(new RegExp(filterByName, "i"))
     )
-    .filter((character) => {
-      if (filterBySpecies === "All") {
-        return true;
-      } else {
-        return character.Species === filterBySpecies;
-      }
-    });
+    
 
   return (
     <div className="App">
@@ -53,7 +44,6 @@ function App() {
         <FilterList
           characters={filteredList}
           filterByName={filterByName}
-          filterBySpecies={filterBySpecies}
           setFilterByName={setFilterByName}
           handleFilter={handleFilter}
         />

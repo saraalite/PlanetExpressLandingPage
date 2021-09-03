@@ -1,17 +1,27 @@
 .CardWrapper{
   display:flex;
+  padding:20px;
 }
 
 .OfertaImg {
-  margin-top:100px;
-  width:1000px;
-  height: 600px;
+  width: 90%;
 }
+/* @media (max-width: 767px) {
+  .OfertaImg {
+    width:250px;
+    height: 150px;
+  }
+} */
+
 .ExpirationDateContainer {
   border-radius: 20px;
   background-color: yellow;
   width: 200px;
-  margin:auto;
+}
+@media (max-width: 768px) {
+  .ExpirationDateContainer {
+   max-width:150px;
+  }
 }
 .ArrowButton {
   margin:auto;
@@ -22,9 +32,17 @@
   font-size: 50px;
   border-color:transparent;
   margin-right: 10px;
-
-
 }
+@media (max-width: 768px) {
+  .ArrowButton {
+    width:10px;
+    height: 10px;
+    margin: auto;
+    margin-left:-10px;
+    font-size:20px;
+  }
+}
+
 .ArrowButton:hover{
   cursor: pointer;
   font-weight: bold;

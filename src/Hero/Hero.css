@@ -1,10 +1,24 @@
 
 .Hero {
-  background-color:#408874;  ;
-  height: 400px;
-  margin-top: 80px;
+  background-color:#408874;
+  width: 100%;
+  margin-top: 70px;
 }
+
+.HeroTitle {
+  margin:0;
+  padding:20px;
+}
+
 .logo_pe {
-  width:350px;
-  height:250px
+  max-width: 20%;
+  max-height: 20%;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .logo_pe {
+    max-width: 70%;
+    max-height: 70%;
+  }
 }

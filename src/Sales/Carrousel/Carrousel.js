@@ -33,6 +33,9 @@ function Carrousel() {
   function isLastElement(index, list) {
     return currentCardIndex === salesCards.length - 1
   }
+  function isFirstElement(index, list) {
+    return currentCardIndex === 0
+  }
 
   function nextCard(currentCardIndex) {
     if (isLastElement(currentCardIndex, salesCards)) 
@@ -40,9 +43,16 @@ function Carrousel() {
     else 
       setCurrentCardIndex(currentCardIndex + 1)
   }
+  function previousCard(currentCardIndex) {
+    if (isFirstElement(currentCardIndex, salesCards)) 
+      setCurrentCardIndex(salesCards.length - 1)
+    else 
+      setCurrentCardIndex(currentCardIndex -1)
+  }
 
   return (
     <div className="CardWrapper">
+      <button className="ArrowButton" onClick={() => previousCard(currentCardIndex)}> { "<" } </button>
       {
         salesCards.filter((_, index) => index === currentCardIndex).map((salesCard) =>
           <Card salesImage={salesCard.salesImage} expirationDate={salesCard.expirationDate} key={salesCard.expirationDate}>
@@ -50,7 +60,7 @@ function Carrousel() {
           </Card>
         )
       }
-      <button className="ArrowButton" onClick={() => nextCard(currentCardIndex)}> > </button>
+      <button className="ArrowButton" onClick={() => nextCard(currentCardIndex)}> { ">" } </button>
     </div>
   );
 }

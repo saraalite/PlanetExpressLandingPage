@@ -1,18 +1,25 @@
-.CharactersMainWrapper {
-  list-style-type: none;
-}
 .CharacterCard {
-  margin:auto;
-  background-color: pink;
-  width:400px;
-  border-radius: 30px;
+  margin: auto;
+  background-color:white;
+  border-radius: 8px;
+  margin: 10px;
+  box-shadow: 3px 3px;
 }
+
 .CharacterImage {
-  width:150px;
+  max-width: 150px;
+  max-height: 200px;
 }
+
 .CharacterInfoContainer {
-  background-color: khaki;
+  background-color: #1b2117;
+  color:white;
+  margin: auto;
+  width: 100%;
+  height:15%;
+  border-radius:8px;
+}
+.CharacterName{
   margin:auto;
-  width:260px;
-  border-radius: 20px;
+  padding:5px;
 }

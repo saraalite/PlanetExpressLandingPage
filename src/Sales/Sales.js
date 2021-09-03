@@ -6,7 +6,7 @@ function Sales() {
   return (
     <div className="SalesWrapper">
       <header>
-        <h1>OFERTAS</h1>
+        <h1 className="SalesTitle">Ofertas</h1>
         <Carrousel/>
       </header>
     </div>

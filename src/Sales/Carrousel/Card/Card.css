@@ -2,11 +2,15 @@
 .CardContainer {
   border-radius: 50px;
   margin:auto;
-  width:1300px;
-  height: 800px;
-  background-color: grey;
-  margin-right:-200px;
+  width: 60%;
 }
+@media (max-width: 767px) {
+  .CardContainer {
+    width: 90%;
+    margin: auto;
+  }
+}
+
 .ExpirationDateContainer {
   background-color: yellow;
   width: 300px;

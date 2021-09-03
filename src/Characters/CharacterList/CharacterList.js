@@ -1,6 +1,7 @@
 import React from "react";
-import Character from "./Character/Character";
-/* import "./../stylesheets/characterlist.css"; */
+import Character from "../Character/Character";
+import './CharacterList.css';
+
 
 function CharacterList(props) {
   const sortByName = (a, b) => (a.name < b.name ? -1 : 1);
@@ -11,7 +12,7 @@ function CharacterList(props) {
 
   return (
     <>
-      <div className="grid-list-container">{list}</div>
+      <div className="GridListContainer">{list}</div>
     </>
   );
 }

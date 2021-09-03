@@ -1,12 +1,12 @@
 
 .BarMenu {
-  width:100%;
-  position:fixed;
+  width: 100%;
+  position: fixed;
   top: 0;
-  background-color: #fef8c8;
-  height: 100px;
-  margin-top:-20px
+  background-color: #2e1d19;
+  height: 70px;
 }
+
 .flexDiv {
   display: flex;
   justify-content: space-around;
@@ -14,8 +14,14 @@
 }
 
 .menuText{
-  margin-top: 50px;
+  padding: 2px;
   font-size: 20px;
+  color:white;
+}
+@media (max-width: 768px) {
+  .menuText {
+   font-size: 13px;
+  }
 }
 .menuText:hover{
   font-weight: bold;

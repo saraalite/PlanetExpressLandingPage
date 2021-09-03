@@ -5,7 +5,6 @@ const getCharacterFromApi = (characterName) => {
       return data.map((character) => {
         return {
           Name: character.Name,
-          Species: character.Species,
           PicUrl: character.PicUrl,
         };
       }).filter((character, index) => character.Name === characterName && index === 0);

@@ -32,9 +32,7 @@ function CountDownTimer({expirationDate}) {
 
     
     return (
-        <div>
-            <p>{ durationAsString(duration) }</p> 
-        </div>
+        <div> { durationAsString(duration) } </div>
     );
 }
 
