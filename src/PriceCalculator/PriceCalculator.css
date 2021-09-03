@@ -1,0 +1,23 @@
+.MainDiv {
+  height:500px;
+  background-color:red;
+  margin-top: -30px;
+}
+.MainTitle {
+  padding-top:30px
+}
+
+.TakeMoney {
+  width:350px;
+  height: 250px;
+}
+
+.Wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.OrdersList {
+  list-style-type: none;
+}

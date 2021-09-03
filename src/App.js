@@ -1,23 +1,63 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect} from 'react';
+import Hero from './Hero/Hero';
+import BarMenu from './BarMenu/BarMenu';
+import PriceCalculator from './PriceCalculator/PriceCalculator';
+import Sales from './Sales/Sales';
+import Newsletter from './Newsletter/Newsletter';
+import getCharactersFromApi from './Services/getCharactersFromApi';
+import FilterList from "./Characters/FilterList";
 
 function App() {
+  const [characters, setCharacters] = useState([]);
+  const [filterByName, setFilterByName] = useState("");
+  const [filterBySpecies, setFilterBySpecies] = useState("All");
+
+  useEffect(() => {
+    Promise.all(getCharactersFromApi()).then(function(values) {
+      const charactersFromApi = values.flatMap(value => value) 
+      setCharacters(charactersFromApi);
+    });
+  }, []);
+
+  const handleFilter = (data) => {
+    if (data.key === "name") {
+      setFilterByName(data.value);
+    } else if (data.key === "species") {
+      setFilterBySpecies(data.value);
+    }
+  };
+
+  const filteredList = characters
+    .filter(
+      (character) =>
+        filterByName === "" ||
+        character.Name.match(new RegExp(filterByName, "i"))
+    )
+    .filter((character) => {
+      if (filterBySpecies === "All") {
+        return true;
+      } else {
+        return character.Species === filterBySpecies;
+      }
+    });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BarMenu/>
+      <Hero/>
+      <PriceCalculator/>
+      <Sales/>
+      <Newsletter/>
+      <div>
+        <FilterList
+          characters={filteredList}
+          filterByName={filterByName}
+          filterBySpecies={filterBySpecies}
+          setFilterByName={setFilterByName}
+          handleFilter={handleFilter}
+        />
+      </div>
     </div>
   );
 }

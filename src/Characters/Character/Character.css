@@ -1,0 +1,18 @@
+.CharactersMainWrapper {
+  list-style-type: none;
+}
+.CharacterCard {
+  margin:auto;
+  background-color: pink;
+  width:400px;
+  border-radius: 30px;
+}
+.CharacterImage {
+  width:150px;
+}
+.CharacterInfoContainer {
+  background-color: khaki;
+  margin:auto;
+  width:260px;
+  border-radius: 20px;
+}

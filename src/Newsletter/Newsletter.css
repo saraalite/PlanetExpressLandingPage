@@ -1,0 +1,16 @@
+.NewsletterMainDiv {
+  height:500px;
+  background-color:darkgoldenrod;
+  margin-top: -30px;
+}
+.NewsletterTitle {
+  padding-top:50px
+}
+.Mordisquitos {
+  width:150px;
+  height:200px;
+}
+.NewsletterWrapper {
+  display:flex;
+  justify-content: space-around;
+}

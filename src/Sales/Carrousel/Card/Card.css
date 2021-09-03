@@ -1,0 +1,14 @@
+
+.CardContainer {
+  border-radius: 50px;
+  margin:auto;
+  width:1300px;
+  height: 800px;
+  background-color: grey;
+  margin-right:-200px;
+}
+.ExpirationDateContainer {
+  background-color: yellow;
+  width: 300px;
+  margin:auto;
+}
