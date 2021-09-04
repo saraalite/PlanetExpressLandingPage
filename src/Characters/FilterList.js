@@ -21,6 +21,7 @@ function FilterList(props) {
   return (
     <div className="CharactersWrapper">
     <h1 className="CharactersTitle">Quiénes somos</h1>
+    <h2 className="WebPlainText"> Conoce a nuestra plantilla de profesionales más que cualificados. Verás que somos una compañía diversa porque entre nuestras filas hay mutantes, crustáceos, burócratas, tercera (más bien cuarta) edad, robots y hasta algún que otro inútil. Estamos a tu servicio para todo tipo de entregas.</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();

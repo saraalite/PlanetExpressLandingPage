@@ -5,7 +5,6 @@ import './CharacterList.css';
 
 function CharacterList(props) {
   const sortByName = (a, b) => (a.name < b.name ? -1 : 1);
-  console.log(props.characters)
   const list = props.characters.sort(sortByName).map((character) => {
     return <Character character={character} key={character.Name} />;
   });

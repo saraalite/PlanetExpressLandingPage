@@ -4,80 +4,137 @@ import { v4 as uuidv4 } from 'uuid';
 
 function PriceCalculator() {
 
+  const shippingTypes = [
+    {
+      type: "Mercancía estándar",
+      value: 0,
+    },
+    {
+      type: "Mercancía frágil (+5€)",
+      value: 5,
+    },
+    {
+      type: "Mercancía peligrosa (+10€)",
+      value: 10,
+    },
+    {
+      type: "Mercancía ilegal (+50€)",
+      value: 50,
+    },
+    {
+      type: "Animales vivos (+100€)",
+      value: 100,
+    },
+    {
+      type: "Animales muertos (+200€)",
+      value: 200,
+    },
+    {
+      type: "Animales medio muertos (+300€)",
+      value: 300,
+    },
+    {
+      type: "Prefiero no decirlo (+1000€)",
+      value: 1000,
+    },
+  ]
+
   const [listOfPackagesOrders, setListOfPackagesOrders] = React.useState([]);
   const [numberOfPackages, setNumberOfPackages] = useState('');
   const [weightOfPackages, setWeightOfPackages] = useState('');
-  const [value,setValue]=useState('');
+  const [shippingType,setShippingType]=useState(shippingTypes[0]);
 
-/*   const handleSelect=(e)=>{
-    console.log(e);
-    setValue(e)
-  }
-  console.log("valor", value)
- 
   function handleAdd() {
-    const newList = listOfPackagesOrders.concat({ numberOfPackages, weightOfPackages, id: uuidv4() });
+    const pricePerKg = 3;
+    const newList = listOfPackagesOrders.concat(
+      { 
+        numberOfPackages,
+        weightOfPackages,
+        shippingType,
+        total: ((numberOfPackages * weightOfPackages) * pricePerKg) + shippingType.value,
+        id: uuidv4() 
+      }
+    );
     setListOfPackagesOrders(newList);
+    setShippingType(shippingTypes[0]);
     setNumberOfPackages('');
     setWeightOfPackages('');
   }
- */
+
   function calculateTotal (listOfPackagesOrders){
-      const pricePerKg = 3;
-      
       return listOfPackagesOrders.length > 0
         ? listOfPackagesOrders.map(
-            ({numberOfPackages, weightOfPackages}) => numberOfPackages * weightOfPackages
+            ({total}) => total
           ).reduce(
             (accumulator, currentValue) => accumulator + currentValue
-          ) * pricePerKg
+          )
         : 0
   }
-/*    function handleShipping (calculateTotal){
-    const handleChange = (ev) => {
-      handleFilter({
-        value: ev.target.value,
-      });
+
+  const handleSelect=(e)=>{
+    const selectedShippingType = shippingTypes.filter(
+      shippingType => shippingType.type === e.target.value
+    )
+    setShippingType(selectedShippingType[0]);
   }
-}  */
+
   return (
     <div className="MainDiv">
       <h1 className="MainTitle">Calcula el precio de tu paquete</h1>
         <div className="Wrapper">
           <div>
-          Selecciona el tipo de mercancía que quieres transportar
+            <div className="WebPlainText">
+              Selecciona el tipo de mercancía que quieres transportar
+            </div>
           <br></br>
-          <select name="ShippingType" /* onChange={handleSelect} */ /* value={filterByGender} onChange={handleChange} */>
-            <option>Mercancía estándar</option>
-            <option>Mercancía frágil (+5€)</option>
-            <option>Mercancía peligrosa (+10€)</option>
-            <option>Mercancía ilegal (+50€)</option>
-            <option>Animales vivos (+100€)</option>
-            <option>Animales muertos (+200€)</option>
-            <option>Animales medio muertos (+300€)</option>
-            <option>Prefiero no decirlo (+1000€)</option>
-          </select>
-          </div>
-          <div className="FormWrapper">
-            <form>
-              Número de paquetes:
-              <input type="text" value={numberOfPackages} onChange={(event) => setNumberOfPackages(event.target.value)}/>
-              <br/>
-              Peso de cada paquete:
-              <input type="text" value={weightOfPackages} onChange={(event) => setWeightOfPackages(event.target.value)}/>
-            </form>
-            <button type="button">Añadir a la lista</button>
-            <ul className="OrdersList">
-              Número de paquetes / Peso por paquete
-              {listOfPackagesOrders.map((item) => (
-                <li key={item.id}>{item.numberOfPackages} / {item.weightOfPackages}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="TotalWrapper">El precio total es: {calculateTotal(listOfPackagesOrders)}€</div>
+          <select name="ShippingType" className="WebPlainTextInput"onChange={handleSelect} value={shippingType.type}>
+            {
+              shippingTypes.map(shippingType => <option key={shippingType.type}>{shippingType.type}</option>)
+            }
+          </select>  
           <div className="ImageWrapper">
             <img className="TakeMoney" src="/takeMoney.png" alt="Fry with a bunch of dollars in his hand."/>
           </div>
+          </div>
+          <div className="FormWrapper">
+            <form className="WebPlainText">
+              Número de paquetes:
+              <br></br>
+              <input className="WebPlainTextInput" type="text" value={numberOfPackages} onChange={(event) => setNumberOfPackages(event.target.value)}/>
+              <br/>
+              Peso de cada paquete:
+              <br></br>
+              <input className="WebPlainTextInput"  type="text" value={weightOfPackages} onChange={(event) => setWeightOfPackages(event.target.value)}/>
+            </form>
+            <button className="AddShippingButton" type="button" onClick={handleAdd}>Añadir a la lista</button>
+          </div>
+          <div className="TableWrapper">
+          <table className="WebPlainText">
+              <tbody>
+                <tr>
+                  <th>Número de paquetes </th>
+                  <th>Peso por paquete </th>
+                  <th>Tipo de mercancía</th>
+                  <th>Total</th>
+                </tr>
+                {listOfPackagesOrders.map(item =>
+                  <tr>
+                    <td>{item.numberOfPackages}</td>
+                    <td>{item.weightOfPackages}</td>
+                    <td>{item.shippingType.type}</td>
+                    <td>{item.total}€</td>
+                  </tr>
+                )}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{calculateTotal(listOfPackagesOrders)}€</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
         </div>
     </div>
   );

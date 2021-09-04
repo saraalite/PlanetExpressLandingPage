@@ -1,19 +1,18 @@
-
 .FooterWrapper {
   width: 100%;
   background-color: #2e1d19;
   height: 100px;
   display:flex;
   justify-content: space-around;
-
+  padding-top: 15px;
+  padding-bottom: 20px;
 }
 .logoPE{
+  margin-top:20px;
   max-width: 80%;
   max-height: 80%;
 }
 .ContactInfoContainer{
+  margin-top:15px;
   color:white;
-}
-.LogoContainer {
-  padding:20px;
 }

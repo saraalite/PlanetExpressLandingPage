@@ -17,7 +17,7 @@ function Footer() {
             Email: planetExpress@gmail.com
         </div>
         <div className="ContactInfoContainer">
-          Planet Express<br></br>{getCurrentYear}
+          Planet Express©<br></br>{getCurrentYear}
         </div>
       </div>
 

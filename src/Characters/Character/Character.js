@@ -10,7 +10,7 @@ function Character(props) {
         alt={props.character.Name}
       ></img>
       <div className="CharacterInfoContainer">
-      <p className="CharacterName"> Nombre : {props.character.Name}</p>
+      <p className="CharacterName">{props.character.Name}</p>
       </div>
     </div>
   );

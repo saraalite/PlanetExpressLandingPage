@@ -6,24 +6,11 @@
 .OfertaImg {
   width: 90%;
 }
-/* @media (max-width: 767px) {
-  .OfertaImg {
-    width:250px;
-    height: 150px;
-  }
-} */
 
 .ExpirationDateContainer {
-  border-radius: 20px;
-  background-color: #d1b15d
-  ;
-  width: 200px;
+font-size: 30px;
 }
-@media (max-width: 768px) {
-  .ExpirationDateContainer {
-   max-width:150px;
-  }
-}
+
 .ArrowButton {
   margin:auto;
   width:100px;

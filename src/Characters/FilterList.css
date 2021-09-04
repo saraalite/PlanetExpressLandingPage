@@ -5,4 +5,16 @@
 .CharactersTitle {
   margin:0;
   padding:20px;
+  font-size: 60px;
+}
+.InputEmployees {
+  min-width:10%;
+  height:30px;
+  margin-right: 20px;
+  margin-top:20px;
+  border-radius:6px;  
+}
+.WebPlainText{
+  font-size: 22px;
+  padding:20px
 }

@@ -1,10 +1,10 @@
 .NewsletterMainDiv {
-  height:500px;
   background-color:#548198;
 }
 .NewsletterTitle {
   margin:0;
   padding:20px;
+  font-size: 60px;
 }
 .Mordisquitos {
   width:150px;
@@ -13,4 +13,26 @@
 .NewsletterWrapper {
   display:flex;
   justify-content: space-around;
+}
+.CustomForm {
+min-width:10%;
+height:30px;
+margin-right: 20px;
+margin-top:20px;
+border-radius:6px  
+}
+.Message {
+  padding:30px
+}
+.SubmitButton{
+  border-radius: 6px;
+  padding:8px;
+  background-color:black;
+  color:white;
+  font-weight: bold;
+  font-size:20px;
+  margin-top:10px;
+}
+.WebPlainText {
+  font-size: 22px;
 }

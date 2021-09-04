@@ -1,4 +1,5 @@
 import React from "react";
+import FilterList from "./FilterList";
 
 const FilterByName = (props) => {
   const handleChange = (ev) => {
@@ -9,7 +10,7 @@ const FilterByName = (props) => {
   };
   return (
     <input
-      className="input"
+      className="InputEmployees"
       placeholder="Busca en nuestra plantilla"
       type="text"
       value={props.filterByName}

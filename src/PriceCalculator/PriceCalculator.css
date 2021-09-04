@@ -1,21 +1,21 @@
 .MainDiv {
-  height:500px;
+  min-height:400px;
   background-color:#933b30;
+  padding-bottom:20px;
+}
+.WebPlainText{
+  font-size: 60px;
 }
 .MainTitle {
   margin: 0;
   padding:20px;
+  font-size: 60px;
 }
 
 .TakeMoney {
-  width:350px;
-  height: 250px;
-}
-@media (max-width: 768px) {
-  .TakeMoney {
-    width:150px;
-    height: 100px;
-  }
+  padding-top:80px;
+  width:150px;
+  height: 100px;
 }
 
 .Wrapper {
@@ -30,6 +30,19 @@
   }
 }
 
-.OrdersList {
-  list-style-type: none;
+.FormWrapper {
+  margin:auto;
+}
+.AddShippingButton {
+  border-radius: 6px;
+  padding:8px;
+  background-color:black;
+  color:white;
+  font-weight: bold;
+  font-size:20px;
+  margin-top:10px;
+}
+
+.WebPlainTextInput{
+  font-size: 18px;
 }

@@ -56,7 +56,7 @@ function Carrousel() {
       {
         salesCards.filter((_, index) => index === currentCardIndex).map((salesCard) =>
           <Card salesImage={salesCard.salesImage} expirationDate={salesCard.expirationDate} key={salesCard.expirationDate}>
-           <div className="ExpirationDateContainer"> Tiempo restante:  <CountDownTimer expirationDate={moment(salesCard.expirationDate, 'YYYY-MM-DD')} /> </div> 
+            <div className="ExpirationDateContainer"> Tiempo restante:  <CountDownTimer expirationDate={moment(salesCard.expirationDate, 'YYYY-MM-DD')} /> </div> 
           </Card>
         )
       }
