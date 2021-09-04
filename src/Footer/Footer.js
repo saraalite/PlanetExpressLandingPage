@@ -5,7 +5,7 @@ function Footer() {
   return (
       <div className="FooterWrapper">
         <div className="LogoContainer">
-        <img className="logoPE" src="/logo_pe.png" alt="Planet express logo. Big spaceship."/>
+        <img className="logoPE" src={process.env.PUBLIC_URL + '/logo_pe.png'} alt="Planet express logo. Big spaceship."/>
         </div>
         <div className="ContactInfoContainer">
             Contacto:

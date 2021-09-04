@@ -9,23 +9,23 @@ function Carrousel() {
 
   const salesCards = [
     {
-      salesImage: <img className="OfertaImg" src="/oferta_peligrosa.png" alt="Oferta bono 5 entregas de mercancía peligrosa."/>,
+      salesImage: <img className="OfertaImg" src={process.env.PUBLIC_URL + '/oferta_peligrosa.png'} alt="Oferta bono 5 entregas de mercancía peligrosa."/>,
       expirationDate: '2021-12-01'
     },
     {
-      salesImage: <img className="OfertaImg" src="/oferta_bono10.png" alt="Oferta bono 5 entregas de mercancía peligrosa."/>,
+      salesImage: <img className="OfertaImg" src={process.env.PUBLIC_URL + '/oferta_bono10.png'} alt="Oferta bono 5 entregas de mercancía peligrosa."/>,
       expirationDate: '2021-11-01'
     },
     {
-      salesImage: <img className="OfertaImg" src="/oferta_gratis.png" alt="Oferta bono 5 entregas de mercancía peligrosa."/>,
+      salesImage: <img className="OfertaImg" src={process.env.PUBLIC_URL + '/oferta_gratis.png'} alt="Oferta bono 5 entregas de mercancía peligrosa."/>,
       expirationDate: '3000-01-01'
     },
     {
-      salesImage: <img className="OfertaImg" src="/oferta_ilegales.png" alt="Oferta bono 5 entregas de mercancía peligrosa."/>,
+      salesImage: <img className="OfertaImg" src={process.env.PUBLIC_URL + '/oferta_ilegales.png'} alt="Oferta bono 5 entregas de mercancía peligrosa."/>,
       expirationDate: '2021-12-24'
     },
     {
-      salesImage: <img className="OfertaImg" src="/oferta_mudanza.png" alt="Oferta bono 5 entregas de mercancía peligrosa."/>,
+      salesImage: <img className="OfertaImg" src={process.env.PUBLIC_URL + '/oferta_mudanza.png'}  alt="Oferta bono 5 entregas de mercancía peligrosa."/>,
       expirationDate: '2021-12-31'
     }
   ]

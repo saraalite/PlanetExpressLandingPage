@@ -59,7 +59,7 @@ function Newsletter() {
       <div className="NewsletterMainDiv">
         <h1 className="Title">Newsletter</h1>
         <h2 className="PlainText">Suscríbete a nuestra Newsletter para estar al día de todas las novedades más allá del espacio exterior</h2>
-        <img className="Mordisquitos" src="/Mordisquitos.png" alt="Mordisquitos."/>
+        <img className="Mordisquitos" src={process.env.PUBLIC_URL + '/Mordisquitos.png'} alt="Mordisquitos."/>
         <br/>
         <br/>
         <br/>

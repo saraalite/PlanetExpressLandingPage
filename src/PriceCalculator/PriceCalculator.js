@@ -96,7 +96,7 @@ function PriceCalculator() {
               }
             </select>  
             <div className="ImageWrapper">
-              <img className="TakeMoney" src="/takeMoney.png" alt="Fry with a bunch of dollars in his hand."/>
+              <img className="TakeMoney" src={process.env.PUBLIC_URL + '/takeMoney.png'} alt="Fry with a bunch of dollars in his hand."/>
             </div>
             </div>
             <div className="FormWrapper">
