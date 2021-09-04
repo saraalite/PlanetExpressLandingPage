@@ -1,6 +1,6 @@
 {
   "name": "planet-express-landing",
-  "homepage": "./",
+  "homepage": "/PlanetExpressLandingPage/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
