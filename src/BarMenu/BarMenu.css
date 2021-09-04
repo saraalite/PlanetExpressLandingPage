@@ -27,3 +27,7 @@
   font-weight: bold;
   cursor:pointer;
 }
+
+.NavBarLink {
+  text-decoration: none;;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './PriceCalculator.css';
 import { v4 as uuidv4 } from 'uuid';
+import '../Common.css';
 
 function PriceCalculator() {
 
@@ -79,64 +80,67 @@ function PriceCalculator() {
   }
 
   return (
-    <div className="MainDiv">
-      <h1 className="MainTitle">Calcula el precio de tu paquete</h1>
-        <div className="Wrapper">
-          <div>
-            <div className="WebPlainText">
-              Selecciona el tipo de mercancía que quieres transportar
+    <>
+      <div className="anchor" id="PriceCalculator"></div>
+      <div className="MainDiv">
+        <h1 className="Title">Calcula el precio de entrega de tu paquete</h1>
+          <div className="Wrapper">
+            <div>
+              <div className="PlainText">
+                Selecciona el tipo de mercancía que quieres transportar
+              </div>
+            <br></br>
+            <select name="ShippingType" className="PlainTextInput"onChange={handleSelect} value={shippingType.type}>
+              {
+                shippingTypes.map(shippingType => <option key={shippingType.type}>{shippingType.type}</option>)
+              }
+            </select>  
+            <div className="ImageWrapper">
+              <img className="TakeMoney" src="/takeMoney.png" alt="Fry with a bunch of dollars in his hand."/>
             </div>
-          <br></br>
-          <select name="ShippingType" className="WebPlainTextInput"onChange={handleSelect} value={shippingType.type}>
-            {
-              shippingTypes.map(shippingType => <option key={shippingType.type}>{shippingType.type}</option>)
-            }
-          </select>  
-          <div className="ImageWrapper">
-            <img className="TakeMoney" src="/takeMoney.png" alt="Fry with a bunch of dollars in his hand."/>
-          </div>
-          </div>
-          <div className="FormWrapper">
-            <form className="WebPlainText">
-              Número de paquetes:
-              <br></br>
-              <input className="WebPlainTextInput" type="text" value={numberOfPackages} onChange={(event) => setNumberOfPackages(event.target.value)}/>
-              <br/>
-              Peso de cada paquete:
-              <br></br>
-              <input className="WebPlainTextInput"  type="text" value={weightOfPackages} onChange={(event) => setWeightOfPackages(event.target.value)}/>
-            </form>
-            <button className="AddShippingButton" type="button" onClick={handleAdd}>Añadir a la lista</button>
-          </div>
-          <div className="TableWrapper">
-          <table className="WebPlainText">
-              <tbody>
-                <tr>
-                  <th>Número de paquetes </th>
-                  <th>Peso por paquete </th>
-                  <th>Tipo de mercancía</th>
-                  <th>Total</th>
-                </tr>
-                {listOfPackagesOrders.map(item =>
+            </div>
+            <div className="FormWrapper">
+              <form className="PlainText">
+                Número de paquetes:
+                <br></br>
+                <input className="PlainTextInput" type="text" value={numberOfPackages} onChange={(event) => setNumberOfPackages(event.target.value)}/>
+                <br/>
+                Peso de cada paquete:
+                <br></br>
+                <input className="PlainTextInput"  type="text" value={weightOfPackages} onChange={(event) => setWeightOfPackages(event.target.value)}/>
+              </form>
+              <button className="AddShippingButton" type="button" onClick={handleAdd}>Añadir a la lista</button>
+            </div>
+            <div className="TableWrapper">
+            <table>
+                <tbody>
                   <tr>
-                    <td>{item.numberOfPackages}</td>
-                    <td>{item.weightOfPackages}</td>
-                    <td>{item.shippingType.type}</td>
-                    <td>{item.total}€</td>
+                    <th>Número de paquetes </th>
+                    <th>Peso por paquete </th>
+                    <th>Tipo de mercancía</th>
+                    <th>Total</th>
                   </tr>
-                )}
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>{calculateTotal(listOfPackagesOrders)}€</td>
-                  </tr>
-              </tbody>
-            </table>
-          </div>
+                  {listOfPackagesOrders.map(item =>
+                    <tr>
+                      <td>{item.numberOfPackages}</td>
+                      <td>{item.weightOfPackages}</td>
+                      <td>{item.shippingType.type}</td>
+                      <td>{item.total}€</td>
+                    </tr>
+                  )}
+                  <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>{calculateTotal(listOfPackagesOrders)}€</td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
 
-        </div>
-    </div>
+          </div>
+      </div>
+    </>
   );
 }
 

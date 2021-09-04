@@ -1,5 +1,5 @@
 import React from "react";
-import FilterList from "./FilterList";
+import '../Common.css';
 
 const FilterByName = (props) => {
   const handleChange = (ev) => {
@@ -9,13 +9,16 @@ const FilterByName = (props) => {
     });
   };
   return (
-    <input
-      className="InputEmployees"
-      placeholder="Busca en nuestra plantilla"
-      type="text"
-      value={props.filterByName}
-      onChange={handleChange}
-    />
+    <>
+      <div className="anchor" id="Characters"></div>
+        <input
+          className="InputEmployees"
+          placeholder="Busca en nuestra plantilla"
+          type="text"
+          value={props.filterByName}
+          onChange={handleChange}
+        />
+    </>
   );
 };
 

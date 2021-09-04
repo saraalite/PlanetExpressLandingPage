@@ -1,0 +1,21 @@
+.anchor {
+  margin-top: -65px;
+  margin-bottom: 65px;
+}
+
+.PlainText{
+  font-size: 22px;
+  padding-top:20px
+}
+
+.Title {
+  margin: 0;
+  padding: 20px;
+  font-size: 60px;
+}
+
+@media (max-width: 750px) {
+  .Title {
+    font-size: 40px;
+  }
+}

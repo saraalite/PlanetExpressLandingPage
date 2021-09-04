@@ -5,6 +5,12 @@
   margin-top: 70px;
 }
 
+@media (max-width: 764px) {
+  .Hero {
+    height: 100vh;
+  }
+}
+
 .HeroTitle {
   margin:0;
   padding:20px;
