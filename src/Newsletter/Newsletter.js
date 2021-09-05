@@ -25,16 +25,16 @@ function Newsletter() {
   
     return (
       <div>
-        {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
+        {status === "sending" && <div style={{ color: "blue" }}>Enviando...</div>}
         {status === "error" && (
           <div
-            style={{ color: "red" }}
+            style={{ color: "black" }}
             dangerouslySetInnerHTML={{ __html: message }}
           />
         )}
         {status === "success" && (
           <div
-            style={{ color: "green" }}
+            style={{ color: "black" }}
             dangerouslySetInnerHTML={{ __html: message }}
           />
         )}
