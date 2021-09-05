@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/PlanetExpressLandingPage/static/css/main.21378967.chunk.css",
+    "main.js": "/PlanetExpressLandingPage/static/js/main.6ddfc05d.chunk.js",
+    "main.js.map": "/PlanetExpressLandingPage/static/js/main.6ddfc05d.chunk.js.map",
+    "runtime-main.js": "/PlanetExpressLandingPage/static/js/runtime-main.592c189c.js",
+    "runtime-main.js.map": "/PlanetExpressLandingPage/static/js/runtime-main.592c189c.js.map",
+    "static/js/2.590fe26f.chunk.js": "/PlanetExpressLandingPage/static/js/2.590fe26f.chunk.js",
+    "static/js/2.590fe26f.chunk.js.map": "/PlanetExpressLandingPage/static/js/2.590fe26f.chunk.js.map",
+    "static/js/3.ed22f594.chunk.js": "/PlanetExpressLandingPage/static/js/3.ed22f594.chunk.js",
+    "static/js/3.ed22f594.chunk.js.map": "/PlanetExpressLandingPage/static/js/3.ed22f594.chunk.js.map",
+    "index.html": "/PlanetExpressLandingPage/index.html",
+    "static/css/main.21378967.chunk.css.map": "/PlanetExpressLandingPage/static/css/main.21378967.chunk.css.map",
+    "static/js/2.590fe26f.chunk.js.LICENSE.txt": "/PlanetExpressLandingPage/static/js/2.590fe26f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.592c189c.js",
+    "static/js/2.590fe26f.chunk.js",
+    "static/css/main.21378967.chunk.css",
+    "static/js/main.6ddfc05d.chunk.js"
+  ]
+}

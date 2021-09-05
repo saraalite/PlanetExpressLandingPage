@@ -168,7 +168,7 @@ function PriceCalculator() {
                 <br></br>
                 <input className="PlainTextInput" type="text" value={numberOfPackages} onChange={(event) => setNumberOfPackages(event.target.value)}/>
                 <br/>
-                Peso de cada paquete:
+                Peso de cada paquete (kg):
                 <br></br>
                 <input className="PlainTextInput"  type="text" value={weightOfPackages} onChange={(event) => setWeightOfPackages(event.target.value)}/>
               </form>
@@ -188,7 +188,7 @@ function PriceCalculator() {
                   {listOfPackagesOrders.map(item =>
                     <tr>
                       <td>{item.numberOfPackages}</td>
-                      <td>{item.weightOfPackages}</td>
+                      <td>{item.weightOfPackages} kg</td>
                       <td>{item.shippingType.type}</td>
                       <td>{item.shippingDestination.type}</td>
                       <td>{item.total}€</td>
