@@ -74,7 +74,7 @@ function Newsletter() {
         )}
       />
       <div className="Message">
-      { isSuccess && `Tu email ${email} se ha suscrito correctamente.` }
+      { isSuccess && `¡Pronto recibirás noticias nuestras en tu email: ${email}!` }
       </div>
     </div>
     </>
