@@ -41,14 +41,12 @@ function App() {
       <PriceCalculator/>
       <Sales/>
       <Newsletter/>
-      <div>
-        <FilterList
-          characters={filteredList}
-          filterByName={filterByName}
-          setFilterByName={setFilterByName}
-          handleFilter={handleFilter}
-        />
-      </div>
+      <FilterList
+        characters={filteredList}
+        filterByName={filterByName}
+        setFilterByName={setFilterByName}
+        handleFilter={handleFilter}
+      />
       <Footer/>
     </div>
   );

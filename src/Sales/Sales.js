@@ -10,7 +10,7 @@ function Sales() {
       <div className="SalesWrapper">
         <header>
           <h1 className="Title">Ofertas</h1>
-          <h2>Consulta nuestra ofertas. Solo aplicables en días bisiestos.</h2>
+          <h2 className="PlainText">Consulta nuestra ofertas. Solo aplicables en días bisiestos.</h2>
           <Carrousel/>
         </header>
       </div>

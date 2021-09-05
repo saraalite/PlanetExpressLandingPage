@@ -10,7 +10,6 @@ const FilterByName = (props) => {
   };
   return (
     <>
-      <div className="anchor" id="Characters"></div>
         <input
           className="InputEmployees"
           placeholder="Busca en nuestra plantilla"

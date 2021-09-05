@@ -1,21 +1,16 @@
 .MainDiv {
   min-height:400px;
-  background-color:#933b30;
+/*   background-color:#933b30; */
+  background-color: #d27f74;
   padding-bottom:20px;
 }
 .PlainText{
   font-size: 60px;
 }
 
-.TakeMoney {
-  padding-top:80px;
-  width:150px;
-  height: 100px;
-}
-
 .Wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
 }
 @media (max-width: 768px) {
@@ -36,15 +31,29 @@
   font-weight: bold;
   font-size:20px;
   margin-top:10px;
+  margin-bottom:30px;
+}
+
+.AddShippingButton:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
 
 .PlainTextInput{
   font-size: 18px;
+  min-width:10%;
+  height:30px;
+  margin-right: 20px;
+  margin-top:5px;
+  margin-bottom:10px;
+  border-radius:6px  
 }
 
 .TableWrapper {
   padding: 20px;
   font-size: 20px;
+  margin:auto;
 }
 
 @media (max-width: 768px) {
@@ -54,4 +63,14 @@
   .PlainTextInput{
     font-size: 12px;
   }  
+}
+
+.PriceTable {
+  margin:auto;
+  width:60%
+}
+@media (max-width: 768px) {
+  .PriceTable {
+   width:100%
+  }
 }

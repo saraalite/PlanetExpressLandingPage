@@ -5,7 +5,7 @@ function BarMenu() {
     <div className="BarMenu">
       <div className="flexDiv">
         <a className="NavBarLink" href='#PriceCalculator'>
-          <p className="menuText">Calcula el precio de tu paquete</p>
+          <p className="menuText">Calculadora de precios</p>
         </a>
         <a className="NavBarLink" href='#Sales'>
           <p className="menuText">Ofertas</p>

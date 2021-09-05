@@ -29,13 +29,14 @@
 }
 
 .ContactInfoContainer{
-  margin-top:15px;
+  margin-top:40px;
   color:white;
-  font-size:22px;
+  font-size:15px;
+  padding:10px; 
 }
 
 @media (max-width: 750px) {
   .ContactInfoContainer {
-    font-size: 13px;
+    font-size: 12px;
   }
 }

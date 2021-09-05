@@ -1,5 +1,6 @@
 .NewsletterMainDiv {
-  background-color:#548198;
+ /*  background-color:#548198; */
+ background-color: #89acbe;
 }
 .NewsletterTitle {
   margin:0;
@@ -32,7 +33,10 @@ border-radius:6px
   font-weight: bold;
   font-size:20px;
   margin-top:10px;
+  margin-bottom:30px;
 }
 .PlainText {
   font-size: 22px;
+  font-weight: normal;
+  margin:20px;
 }

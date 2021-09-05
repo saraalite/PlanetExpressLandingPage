@@ -56,26 +56,26 @@ function Newsletter() {
   return (
     <>
     <div className="anchor" id="Newsletter"></div>
-      <div className="NewsletterMainDiv">
-        <h1 className="Title">Newsletter</h1>
-        <h2 className="PlainText">Suscríbete a nuestra Newsletter para estar al día de todas las novedades más allá del espacio exterior</h2>
-        <img className="Mordisquitos" src={process.env.PUBLIC_URL + '/mordisquitos.png'} alt="Mordisquitos."/>
-        <br/>
-        <br/>
-        <br/>
-        <MailchimpSubscribe
-          url={process.env.REACT_APP_MAILCHIMP_URL}
-          render={({ subscribe, status, message }) => (
-            <CustomForm
-              status={status}
-              message={message}
-              onValidated={formData => subscribe(formData)}
-            />
-          )}
-        />
-        <div className="Message">
-        { isSuccess && `Tu email ${email} se ha suscrito correctamente.` }
-        </div>
+    <div className="NewsletterMainDiv">
+      <h1 className="Title">Newsletter</h1>
+      <h2 className="PlainText">Suscríbete a nuestra Newsletter para estar al día de todas las novedades más allá del espacio exterior</h2>
+      <img className="Mordisquitos" src={process.env.PUBLIC_URL + '/mordisquitos.png'} alt="Mordisquitos."/>
+      <br/>
+      <br/>
+      <br/>
+      <MailchimpSubscribe
+        url={process.env.REACT_APP_MAILCHIMP_URL}
+        render={({ subscribe, status, message }) => (
+          <CustomForm
+            status={status}
+            message={message}
+            onValidated={formData => subscribe(formData)}
+          />
+        )}
+      />
+      <div className="Message">
+      { isSuccess && `Tu email ${email} se ha suscrito correctamente.` }
+      </div>
     </div>
     </>
   );

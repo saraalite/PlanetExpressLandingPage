@@ -40,10 +40,50 @@ function PriceCalculator() {
     },
   ]
 
+  const shippingDestinations = [
+    {
+      type: "Vía Láctea",
+      value: 0,
+    },
+    {
+      type: "Enana del Can Mayor (+500€)",
+      value: 500,
+    },
+    {
+      type: "Enana Elíptica de Sagitario (+600€)",
+      value: 600,
+    },
+    {
+      type: "Gran Nube de Magallanes (+700€)",
+      value: 700,
+    },
+    {
+      type: "Enana de Boötes (+800€)",
+      value: 800,
+    },
+    {
+      type: "Pequeña Nube de Magallanes (+900€)",
+      value: 900,
+    },
+    {
+      type: "Enana de la Osa Menor (+1000€)",
+      value: 1000,
+    },
+    {
+      type: "Enana de Draco (+1100€)",
+      value: 1100,
+    },
+    {
+      type: "Más allá (+1500€)",
+      value: 1500,
+    },
+  ]
+
   const [listOfPackagesOrders, setListOfPackagesOrders] = React.useState([]);
   const [numberOfPackages, setNumberOfPackages] = useState('');
   const [weightOfPackages, setWeightOfPackages] = useState('');
   const [shippingType,setShippingType]=useState(shippingTypes[0]);
+  const [shippingDestination, setShippingDestination]=useState(shippingDestinations[0])
 
   function handleAdd() {
     const pricePerKg = 3;
@@ -52,12 +92,14 @@ function PriceCalculator() {
         numberOfPackages,
         weightOfPackages,
         shippingType,
-        total: ((numberOfPackages * weightOfPackages) * pricePerKg) + shippingType.value,
+        shippingDestination,
+        total: (((numberOfPackages * weightOfPackages) * pricePerKg) + shippingType.value)+shippingDestination.value,
         id: uuidv4() 
       }
     );
     setListOfPackagesOrders(newList);
     setShippingType(shippingTypes[0]);
+    setShippingDestination(shippingDestinations[0]);
     setNumberOfPackages('');
     setWeightOfPackages('');
   }
@@ -72,11 +114,23 @@ function PriceCalculator() {
         : 0
   }
 
-  const handleSelect=(e)=>{
+  function isButtonDisabled () {
+    const regexNumbers = /^[0-9]+$/
+    return !(regexNumbers.test(numberOfPackages) && regexNumbers.test(weightOfPackages))
+  }
+
+  const handleSelectType=(e)=>{
     const selectedShippingType = shippingTypes.filter(
       shippingType => shippingType.type === e.target.value
     )
     setShippingType(selectedShippingType[0]);
+  }
+
+  const handleSelectDestination=(e)=>{
+    const selectedDestinationType = shippingDestinations.filter(
+      shippingDestination => shippingDestination.type === e.target.value
+    )
+    setShippingDestination(selectedDestinationType[0]);
   }
 
   return (
@@ -85,19 +139,28 @@ function PriceCalculator() {
       <div className="MainDiv">
         <h1 className="Title">Calcula el precio de entrega de tu paquete</h1>
           <div className="Wrapper">
-            <div>
-              <div className="PlainText">
-                Selecciona el tipo de mercancía que quieres transportar
+              <div>
+                  <div className="PlainText">
+                    Selecciona el tipo de mercancía que quieres transportar
+                  </div>
+                <br></br>
+                <select name="ShippingType" className="PlainTextInput"onChange={handleSelectType} value={shippingType.type}>
+                  {
+                    shippingTypes.map(shippingType => <option key={shippingType.type}>{shippingType.type}</option>)
+                  }
+                </select>  
               </div>
-            <br></br>
-            <select name="ShippingType" className="PlainTextInput"onChange={handleSelect} value={shippingType.type}>
-              {
-                shippingTypes.map(shippingType => <option key={shippingType.type}>{shippingType.type}</option>)
-              }
-            </select>  
-            <div className="ImageWrapper">
-              <img className="TakeMoney" src={process.env.PUBLIC_URL + '/takeMoney.png'} alt="Fry with a bunch of dollars in his hand."/>
-            </div>
+              <div>
+                  <div className="PlainText">
+                    Selecciona el destino de tu mercancía
+                  </div>
+                <br></br>
+                <select name="ShippingDestination" className="PlainTextInput"onChange={handleSelectDestination} value={shippingDestination.type}>
+                  {
+                    shippingDestinations.map(shippingDestination => <option key={shippingDestination.type}>{shippingDestination.type}</option>)
+                  }
+                </select>  
+              </div>
             </div>
             <div className="FormWrapper">
               <form className="PlainText">
@@ -109,15 +172,17 @@ function PriceCalculator() {
                 <br></br>
                 <input className="PlainTextInput"  type="text" value={weightOfPackages} onChange={(event) => setWeightOfPackages(event.target.value)}/>
               </form>
-              <button className="AddShippingButton" type="button" onClick={handleAdd}>Añadir a la lista</button>
+              <button className="AddShippingButton" type="button" onClick={handleAdd} disabled={isButtonDisabled()}>Añadir a la lista</button>
             </div>
+          
             <div className="TableWrapper">
-            <table>
+            <table className="PriceTable">
                 <tbody>
                   <tr>
                     <th>Número de paquetes </th>
                     <th>Peso por paquete </th>
                     <th>Tipo de mercancía</th>
+                    <th>Destino</th>
                     <th>Total</th>
                   </tr>
                   {listOfPackagesOrders.map(item =>
@@ -125,10 +190,12 @@ function PriceCalculator() {
                       <td>{item.numberOfPackages}</td>
                       <td>{item.weightOfPackages}</td>
                       <td>{item.shippingType.type}</td>
+                      <td>{item.shippingDestination.type}</td>
                       <td>{item.total}€</td>
                     </tr>
                   )}
                   <tr>
+                      <td></td>
                       <td></td>
                       <td></td>
                       <td></td>
@@ -137,8 +204,6 @@ function PriceCalculator() {
                 </tbody>
               </table>
             </div>
-
-          </div>
       </div>
     </>
   );

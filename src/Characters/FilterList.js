@@ -13,32 +13,35 @@ function FilterList(props) {
         En nuestra empresa no trabaja nadie llamado {props.filterByName}
       </p>
       <img
-        src="/Fry.png"
-        alt="Fry with suspicious face"
+        src={process.env.PUBLIC_URL + '/fry.png'}
+        alt="Fry con cara sospechosa"
       />
     </div>
   );
 
   return (
-    <div className="CharactersWrapper">
-    <h1 className="Title">Quiénes somos</h1>
-    <h2 className="PlainText ChactersText"> Conoce a nuestra plantilla de profesionales más que cualificados. Verás que somos una compañía diversa porque entre nuestras filas hay mutantes, crustáceos, burócratas, tercera (más bien cuarta) edad, robots y hasta algún que otro inútil. Estamos a tu servicio para todo tipo de entregas.</h2>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
-      >
-        <FilterByName
-          handleFilter={props.handleFilter}
-          filterByName={props.filterByName}
-        />
-      </form>
-      {props.characters.length > 0 ? (
-        <CharacterList characters={props.characters} />
-      ) : (
-        error
-      )}
-    </div>
+    <>
+      <div className="anchor" id="Characters"></div>
+      <div className="CharactersWrapper">
+      <h1 className="Title">Quiénes somos</h1>
+      <h2 className="PlainText ChactersText"> Conoce a nuestra plantilla de profesionales más que cualificados. Verás que somos una compañía diversa porque entre nuestras filas hay mutantes, crustáceos, burócratas, tercera (más bien cuarta) edad, robots y hasta algún que otro inútil. Estamos a tu servicio para todo tipo de entregas.</h2>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <FilterByName
+            handleFilter={props.handleFilter}
+            filterByName={props.filterByName}
+          />
+        </form>
+        {props.characters.length > 0 ? (
+          <CharacterList characters={props.characters} />
+        ) : (
+          error
+        )}
+      </div>
+    </>
   );
 }
 

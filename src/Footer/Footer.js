@@ -10,7 +10,7 @@ function Footer() {
         <div className="ContactInfoContainer">
             Contacto:
             <br></br>
-            Dirección: Calle 57 Nueva York, zona Oeste de Manhattan
+            Dirección: Calle 57 Nueva Nueva York, zona Oeste de Manhattan
             <br></br>
             Teléfono: 653 85 13 05
             <br></br>
